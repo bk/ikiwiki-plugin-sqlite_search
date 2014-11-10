@@ -108,6 +108,8 @@ sub cgi ($) {
 sub render_result {
     my ($cgi, $query, $res) = @_;
     my $tpl = Renderer->new(cgi=>$cgi);
+    # The result-form and result templates are different from the
+    # built-in xapian search, and must be placed in an appropriate location.
     my $form = $tpl->render_fragment('search-result-form', query=>$query);
     my $formatted_results = $tpl->render_fragment('search-result', result=>$res);
     my $content = $form . $formatted_results;
@@ -408,6 +410,13 @@ key C<add_plugins:>, add a list item: C<- sqlite_search>. (If there is a line
 that reads C<- search>, comment it out -- the official search plugin and
 sqlite_search cannot both be active at the same time).
 
+=item 3.
+
+B<Install templates.> The templates F<search-result-form.tmpl> and
+F<search-result.tmpl> must be copied to an appropriate location. This is
+normally in the F<templates/> folder of your project. The templates may of
+course be modified if you like.
+
 =back
 
 =head1 CAVEATS
@@ -443,7 +452,7 @@ few thousand may be a problem.
 
 Baldur Kristinsson, L<http://github.com/bk>.
 
-This is version 0.1, November 2014.
+This is version 0.2, November 2014.
 
 =head1 COPYRIGHT AND LICENCE
 

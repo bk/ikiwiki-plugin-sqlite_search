@@ -26,6 +26,11 @@ substitute.
    line that reads `- search`, comment it out -- the official search plugin 
    and `sqlite_search` cannot both be active at the same time).
 
+3. **Install templates.** The templates `search-result-form.tmpl` and
+   `search-result.tmpl` must be copied to an appropriate location. This
+   is normally in the `templates/` folder of your project. The templates
+   may of course be modified if you like.
+
 ## CAVEATS
 
 - Pagination has not been implemented yet. The whole set of results is 
