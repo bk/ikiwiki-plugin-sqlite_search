@@ -21,15 +21,18 @@ substitute.
    `~/.ikiwiki/IkiWiki/Plugin/`, but you may prefer some other location in 
    your Perl path.
 
-2. **Configure IkiWiki.** This involves editing your `\*.setup` file. Under 
-   the key `add_plugins:`, add a list item: `- sqlite_search`. (If there is a 
-   line that reads `- search`, comment it out -- the official search plugin 
-   and `sqlite_search` cannot both be active at the same time).
+2. **Configure IkiWiki.** This involves editing your `*.setup` file. Under the 
+   key `add_plugins:`, add a list item: `- sqlite_search`. (If there is a line 
+   that reads `- search`, comment it out -- the official search plugin and 
+   `sqlite_search` cannot both be active at the same time).
 
 3. **Install templates.** The templates `search-result-form.tmpl` and
    `search-result.tmpl` must be copied to an appropriate location. This
    is normally in the `templates/` folder of your project. The templates
    may of course be modified if you like.
+
+4. **Run ikiwiki -setup** on your `*.setup` file. This creates the text index 
+   if needed and refreshes it otherwise.
 
 ## CAVEATS
 
@@ -43,7 +46,7 @@ substitute.
 
 - On a related note, the locale under which the `ikiwiki.cgi` program runs
   should use the UTF-8 character set -- at least if you have any non-ascii
-  content which you wnat to be searcheable.
+  content which you want to be searcheable.
 
 - This module is not suitable for big sites. A few hundred pages is fine, but 
   a few thousand may be a problem.
@@ -52,7 +55,7 @@ substitute.
 
 Author: Baldur Kristinsson, <https://github.com/bk>.
 
-This is version 0.1, November 2014.
+This is version 0.2, December 2014.
 
 ## COPYRIGHT AND LICENCE
 
