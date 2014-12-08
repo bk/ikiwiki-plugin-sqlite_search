@@ -34,6 +34,11 @@ substitute.
 4. **Run ikiwiki -setup** on your `*.setup` file. This creates the text index 
    if needed and refreshes it otherwise.
 
+For further information about the process, see [Installing third party
+plugins][1] on the IkiWiki documentation wiki.
+
+[1]: https://ikiwiki.info/plugins/install/
+
 ## CAVEATS
 
 - Pagination has not been implemented yet. The whole set of results is 
